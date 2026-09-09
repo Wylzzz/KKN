@@ -1,0 +1,1297 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      @keyframes fadeInSimple {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-up {
+        animation: fadeInSimple 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#e3e2e0",
+              "on-tertiary-container": "#788876",
+              "primary-fixed": "#e5e2e1",
+              "on-surface": "#221a11",
+              "surface-tint": "#5f5e5e",
+              error: "#ba1a1a",
+              "inverse-surface": "#382f24",
+              "on-error": "#ffffff",
+              "on-secondary-fixed-variant": "#464745",
+              tertiary: "#000000",
+              "secondary-fixed-dim": "#c7c6c4",
+              "on-secondary-container": "#626361",
+              "on-error-container": "#93000a",
+              primary: "#000000",
+              "on-tertiary-fixed": "#111f12",
+              "outline-variant": "#c4c7c7",
+              "on-primary-fixed": "#1c1b1b",
+              "on-background": "#221a11",
+              "surface-dim": "#e7d7c8",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#444748",
+              secondary: "#5e5f5d",
+              "surface-bright": "#fff8f4",
+              "on-tertiary-fixed-variant": "#3c4b3b",
+              "on-primary": "#ffffff",
+              surface: "#fff8f4",
+              "tertiary-container": "#111f12",
+              "surface-container": "#fbebdb",
+              "secondary-container": "#e0e0dd",
+              "primary-fixed-dim": "#c8c6c5",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#858383",
+              "on-secondary-fixed": "#1a1c1a",
+              "tertiary-fixed-dim": "#bacbb7",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#c8c6c5",
+              outline: "#747878",
+              "inverse-on-surface": "#feeede",
+              "surface-container-high": "#f6e6d6",
+              "on-primary-fixed-variant": "#474746",
+              "surface-variant": "#f0e0d0",
+              background: "#fff8f4",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#fff1e5",
+              "primary-container": "#1c1b1b",
+              "tertiary-fixed": "#d6e7d2",
+              "surface-container-highest": "#f0e0d0",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "prose-max-width": "680px",
+              "space-3xl": "6rem",
+              "space-2xs": "0.25rem",
+              "space-2xl": "4rem",
+              "space-xs": "0.5rem",
+              "space-md": "1rem",
+              "space-4xl": "8rem",
+              "space-sm": "0.75rem",
+              "gutter-desktop": "2.5rem",
+              "gutter-mobile": "1.25rem",
+              "space-lg": "1.5rem",
+              "content-max-width": "1280px",
+              "space-xl": "2.5rem",
+            },
+            fontFamily: {
+              "display-hero-mobile": ["Newsreader"],
+              "label-caps": ["Plus Jakarta Sans"],
+              "headline-xl": ["Newsreader"],
+              "headline-xl-mobile": ["Newsreader"],
+              "headline-md": ["Newsreader"],
+              "body-default": ["Plus Jakarta Sans"],
+              "label-default": ["Plus Jakarta Sans"],
+              "body-lead": ["Plus Jakarta Sans"],
+              "display-hero": ["Newsreader"],
+              "headline-lg": ["Newsreader"],
+              "quote-editorial": ["Newsreader"],
+              "body-sm": ["Plus Jakarta Sans"],
+              "headline-sm": ["Newsreader"],
+            },
+            fontSize: {
+              "display-hero-mobile": [
+                "44px",
+                {
+                  lineHeight: "52px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "400",
+                },
+              ],
+              "label-caps": [
+                "11px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.12em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-xl-mobile": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-md": [
+                "26px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.005em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-default": [
+                "15px",
+                {
+                  lineHeight: "24px",
+                  fontWeight: "400",
+                },
+              ],
+              "label-default": [
+                "13px",
+                {
+                  lineHeight: "18px",
+                  fontWeight: "500",
+                },
+              ],
+              "body-lead": [
+                "18px",
+                {
+                  lineHeight: "28px",
+                  fontWeight: "400",
+                },
+              ],
+              "display-hero": [
+                "72px",
+                {
+                  lineHeight: "80px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "quote-editorial": [
+                "24px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.005em",
+                  fontWeight: "400",
+                },
+              ],
+              "body-sm": [
+                "13px",
+                {
+                  lineHeight: "20px",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-sm": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  fontWeight: "500",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background font-body-default text-on-surface antialiased selection:bg-surface-variant"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div
+        class="h-28 max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col justify-between py-2.5"
+      >
+        <div class="flex items-center justify-between">
+          <span
+            class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant/80 hidden sm:inline-block"
+            >Arsip Komunal • Catatan Perjalanan</span
+          >
+          <div class="flex items-center gap-space-xs mx-auto sm:mx-0">
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"
+            ></span
+            ><span
+              class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant text-center"
+              >KKN Periode 19 Agustus – 19 September 2026 • Desa Deah Teumanah,
+              Kec. Trienggadeng, Kab. Pidie Jaya</span
+            >
+          </div>
+          <div class="hidden sm:flex items-center">
+            <img
+              alt="Profile"
+              class="w-8 h-8 rounded-full object-cover"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1UtFd4pk3fCJH8AmJqH1Fnc_9KiT8LZGWhN1LKw65tUU8XeNlgAmInlavuM-yH1XLeHpK63LF2qGGk90-2usjjdBm3kEm89lgrGN1-skzSacuE7zKmeF8IfL_LdcAIJz8eBMBUoEZHi6ZVTXC283Zmop3_QtgOPoOMrQXU_mxizRSvR7NX3IiS2J73YjQTwRXhhSVloPsqvzkq6u4D3-S49IWl1acgn6miBHjErH7nyftN1M8uTDquhWzHRUUsognh4rYtFbV2N_A"
+            />
+          </div>
+        </div>
+        <div class="flex items-center justify-between gap-space-md">
+          <div class="flex items-center gap-space-sm">
+            <img
+              alt="Laskar 11"
+              class="w-7 h-7 rounded-full object-cover sm:hidden"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1UtFd4pk3fCJH8AmJqH1Fnc_9KiT8LZGWhN1LKw65tUU8XeNlgAmInlavuM-yH1XLeHpK63LF2qGGk90-2usjjdBm3kEm89lgrGN1-skzSacuE7zKmeF8IfL_LdcAIJz8eBMBUoEZHi6ZVTXC283Zmop3_QtgOPoOMrQXU_mxizRSvR7NX3IiS2J73YjQTwRXhhSVloPsqvzkq6u4D3-S49IWl1acgn6miBHjErH7nyftN1M8uTDquhWzHRUUsognh4rYtFbV2N_A"
+            />
+            <div class="flex flex-col">
+              <span
+                class="font-headline-sm text-headline-sm tracking-tight text-primary leading-none"
+                >Laskar 11</span
+              ><span
+                class="font-label-caps text-label-caps text-secondary text-[9px] tracking-widest uppercase"
+                >Deah Teumanah</span
+              >
+            </div>
+          </div>
+          <nav
+            class="flex items-center gap-space-sm sm:gap-space-md overflow-x-auto no-scrollbar py-1"
+            data-active-classes="text-primary font-semibold border-b border-primary"
+          >
+            <a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="home"
+              href="Home.html"
+              >Home</a
+            ><a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="struktur"
+              href="Struktur.html"
+              >Struktur</a
+            ><a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="cerita-kkn"
+              href="Cerita.html"
+              >Cerita KKN</a
+            ><a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="timeline"
+              href="Timeline.html"
+              >Timeline</a
+            ><a
+              aria-current="page"
+              class="transition-colors whitespace-nowrap text-primary font-semibold border-b border-primary"
+              data-path="galeri"
+              href="Galeri.html"
+              >Galeri</a
+            ><a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="pesan-kesan"
+              href="Pesan.html"
+              >Pesan &amp; Kesan</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-28 bg-background min-h-screen">
+      <div class="flex flex-col w-full">
+        <!-- Top Decorative Ambient / Sub-Header -->
+        <section
+          class="w-full max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop pt-space-xl pb-space-lg"
+        >
+          <div
+            class="flex flex-col md:flex-row items-start md:items-end justify-between gap-space-lg"
+          >
+            <div class="max-w-[720px] flex flex-col gap-space-xs">
+              <div class="flex items-center gap-space-xs">
+                <span
+                  class="w-2 h-2 rounded-full bg-on-tertiary-container"
+                ></span>
+                <span
+                  class="font-label-caps text-label-caps uppercase tracking-widest text-secondary"
+                >
+                  ARSIP VISUAL • LEMBARAN DOKUMENTASI
+                </span>
+              </div>
+              <h1
+                class="font-headline-xl text-headline-xl text-primary tracking-tight leading-tight"
+              >
+                Galeri Senyum, Peluh, dan Cahaya Sore
+              </h1>
+              <p
+                class="font-body-lead text-body-lead text-on-surface-variant max-w-[620px] mt-space-2xs"
+              >
+                Ratusan frame tanpa rekayasa. Menangkap tawa anak-anak dusun,
+                senja di pematang sawah Deah Teumanah, hingga kehangatan posko
+                larut malam.
+              </p>
+            </div>
+            <!-- Curated Meta Counter Bento Box -->
+            <div
+              class="flex items-stretch gap-space-xs bg-surface-container-low p-space-sm rounded-xl shadow-sm"
+            >
+              <div class="flex flex-col px-space-md py-space-xs">
+                <span
+                  class="font-label-caps text-label-caps text-secondary uppercase tracking-wider"
+                  >Total Roll</span
+                >
+                <span
+                  class="font-headline-md text-headline-md text-primary font-serif"
+                  >48</span
+                >
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Frame Abadi</span
+                >
+              </div>
+              <div class="w-px bg-surface-dim self-center h-10"></div>
+              <div class="flex flex-col px-space-md py-space-xs">
+                <span
+                  class="font-label-caps text-label-caps text-secondary uppercase tracking-wider"
+                  >Rentang Waktu</span
+                >
+                <span
+                  class="font-headline-md text-headline-md text-primary font-serif"
+                  >31</span
+                >
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Hari Pengabdian</span
+                >
+              </div>
+              <div class="w-px bg-surface-dim self-center h-10"></div>
+              <div class="flex flex-col px-space-md py-space-xs">
+                <span
+                  class="font-label-caps text-label-caps text-secondary uppercase tracking-wider"
+                  >Wilayah</span
+                >
+                <span
+                  class="font-headline-md text-headline-md text-primary font-serif"
+                  >03</span
+                >
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Dusun Terpeta</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Category Filter Bar (Pills with active state) -->
+          <div
+            class="mt-space-2xl flex items-center justify-between gap-space-md overflow-x-auto no-scrollbar pb-space-xs"
+          >
+            <div class="flex items-center gap-space-xs" id="gallery-filters">
+              <button
+                class="filter-btn px-space-md py-space-xs rounded-full bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-wider shadow-sm transition-all duration-200 hover:opacity-90"
+                data-filter="all"
+                type="button"
+              >
+                Semua Foto (48)
+              </button>
+              <button
+                class="filter-btn px-space-md py-space-xs rounded-full bg-surface-container text-on-surface font-label-caps text-label-caps uppercase tracking-wider transition-all duration-200 hover:bg-surface-container-high"
+                data-filter="warga"
+                type="button"
+              >
+                Warga &amp; Gampong (14)
+              </button>
+              <button
+                class="filter-btn px-space-md py-space-xs rounded-full bg-surface-container text-on-surface font-label-caps text-label-caps uppercase tracking-wider transition-all duration-200 hover:bg-surface-container-high"
+                data-filter="proker"
+                type="button"
+              >
+                Kegiatan Proker (16)
+              </button>
+              <button
+                class="filter-btn px-space-md py-space-xs rounded-full bg-surface-container text-on-surface font-label-caps text-label-caps uppercase tracking-wider transition-all duration-200 hover:bg-surface-container-high"
+                data-filter="posko"
+                type="button"
+              >
+                Keluarga Posko (12)
+              </button>
+              <button
+                class="filter-btn px-space-md py-space-xs rounded-full bg-surface-container text-on-surface font-label-caps text-label-caps uppercase tracking-wider transition-all duration-200 hover:bg-surface-container-high"
+                data-filter="candid"
+                type="button"
+              >
+                Candid &amp; Senja (10)
+              </button>
+            </div>
+            <div
+              class="hidden lg:flex items-center gap-space-xs text-secondary font-label-caps text-label-caps"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >photo_camera</span
+              >
+              <span>ARSIP 35MM • DOKUMENTASI FISIK</span>
+            </div>
+          </div>
+        </section>
+        <!-- Editorial Masonry & Asymmetrical Gallery Grid -->
+        <section
+          class="w-full max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop pb-space-4xl"
+        >
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-space-lg items-start"
+            id="gallery-grid"
+          >
+            <!-- Item 1: Anak-anak di Meunasah (Span 7, Landscape 16:10) -->
+            <article
+              class="gallery-item lg:col-span-7 group cursor-pointer bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              data-category="warga"
+              data-index="0"
+            >
+              <div
+                class="relative overflow-hidden aspect-[16/10] bg-surface-container"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  data-alt="A group of lively Acehnese village children laughing and running barefoot across the sunny yard of Meunasah Deah Teumanah, Trienggadeng. Warm cinematic natural golden sunlight, candid dynamic movement, lush tropical fronds in background, film grain texture, natural muted tones with olive green and warm amber earth hues."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKG2CN9fUkk0F9oefn7v0vEJiyszMZKfxKisYvJM48zRn1iNzT8JPTnl-q4-EuyDxIEP8ryGVklm5Abn_3Qicq1KHVtzPZhyE85K97I75FIw-KzX71pXOXTz5-zVTF4ou-jWxL-UD7clIZle_A5vejfoRh6QGm1H0Hbdz_FyWFGL2o_oCBUIGWNi2XE46uY8lpU7t-c3mGJLoGepemn-5F-bwQnTrlcZmxy_0wlVl_yNopolr49o31"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div class="absolute top-space-sm left-space-sm">
+                  <span
+                    class="px-space-xs py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-caps text-label-caps uppercase"
+                  >
+                    Warga &amp; Gampong
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-space-md left-space-md right-space-md text-on-primary"
+                >
+                  <div
+                    class="flex items-center gap-space-xs text-on-primary-container font-label-caps text-label-caps uppercase text-[10px]"
+                  >
+                    <span>24 Agustus 2026</span>
+                    <span>•</span>
+                    <span>Halaman Meunasah Gampong</span>
+                  </div>
+                  <h2
+                    class="font-headline-sm text-headline-sm text-on-primary mt-space-2xs"
+                  >
+                    Tawa Lepas Tanpa Syarat di Pelataran Meunasah
+                  </h2>
+                  <p
+                    class="font-body-sm text-body-sm text-on-primary-fixed-variant line-clamp-1 mt-1"
+                  >
+                    Setiap ashar usai, anak-anak berkumpul sebelum kelas mengaji
+                    dimulai.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- Item 2: 11 Mahasiswa Beranda Posko (Span 5, Portrait 4:5) -->
+            <article
+              class="gallery-item lg:col-span-5 group cursor-pointer bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              data-category="posko"
+              data-index="1"
+            >
+              <div
+                class="relative overflow-hidden aspect-[4/5] bg-surface-container"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  data-alt="Eleven university students of KKN Laskar 11 sitting together on the wooden veranda of their rural village homestay house in Deah Teumanah Pidie Jaya. Rich golden hour dusk sunlight bathing their tired happy faces, holding enamel mugs of hot Aceh coffee, warm familial atmosphere, authentic photobook editorial aesthetic."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA4bEHhYfoZ7WgRE7vScltR3XePcEjJz8zLs8PjE5C8ZjUA0RZqtNYZ5Hjl1kYk6MLAaZChyfFQuGGfVKokMuRAg_uXFwknbbipSUWklIvjC1YbUTLFbZb3Xzd8Ms6K2DpIlqm2DmEndaxzdfdnG6moB8PZd7wr3p2yd3tVmhWcVxCvlbiVreSFhyOfbDkJeNje2jJX6PnYAH7o0x142hCVdr2TQ-gx2iq2lCZYwpmBdrgL9lYv9Kn"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div class="absolute top-space-sm left-space-sm">
+                  <span
+                    class="px-space-xs py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-caps text-label-caps uppercase"
+                  >
+                    Keluarga Posko
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-space-md left-space-md right-space-md text-on-primary"
+                >
+                  <div
+                    class="flex items-center gap-space-xs text-on-primary-container font-label-caps text-label-caps uppercase text-[10px]"
+                  >
+                    <span>29 Agustus 2026</span>
+                    <span>•</span>
+                    <span>Teras Posko Trienggadeng</span>
+                  </div>
+                  <h2
+                    class="font-headline-sm text-headline-sm text-on-primary mt-space-2xs"
+                  >
+                    Sebelas Hati di Beranda Senja
+                  </h2>
+                  <p
+                    class="font-body-sm text-body-sm text-on-primary-fixed-variant line-clamp-1 mt-1"
+                  >
+                    Momen rehat bersama cangkir kopi tubruk setelah survey
+                    sanitasi gampong.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- Item 3: Emak-emak Memarut Kelapa (Span 4, Square 1:1) -->
+            <article
+              class="gallery-item lg:col-span-4 group cursor-pointer bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              data-category="warga"
+              data-index="2"
+            >
+              <div
+                class="relative overflow-hidden aspect-[1/1] bg-surface-container"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  data-alt="Acehnese village mothers and university female students joyfully preparing traditional feast together in village communal kitchen. Grating fresh coconut on traditional kukuran bench, massive iron cooking cauldrons, warm morning sunbeam filtering through wooden slat windows, documentary realism, tactile warmth."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgn--_uWSrE3Bpgw3VmQBqG5FcwYZlsV7N7KVlYkPgE6sHASGd9KSVPrKtMtIdQOhaAhodSqPSSAFbj2_JmdYJKrn-JSSsFGOMK3FWHmMTI_xR-wOw3bdiOHOXBhJS5P9h15fBIebeWU7GPbj84J-P1TGChnQi79CJP9RViwr0_0cPT56a0OgwUCmU0rIjbw76kGafZQEYQqwr2cuPENOmym_CzbqUyKvS5fIpqSiVyX81zllobPed"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div class="absolute top-space-sm left-space-sm">
+                  <span
+                    class="px-space-xs py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-caps text-label-caps uppercase"
+                  >
+                    Warga &amp; Gampong
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-space-md left-space-md right-space-md text-on-primary"
+                >
+                  <div
+                    class="flex items-center gap-space-xs text-on-primary-container font-label-caps text-label-caps uppercase text-[10px]"
+                  >
+                    <span>02 September 2026</span>
+                    <span>•</span>
+                    <span>Dapur Kenduri Jurong Barat</span>
+                  </div>
+                  <h2
+                    class="font-headline-sm text-headline-sm text-on-primary mt-space-2xs"
+                  >
+                    Aroma Kari &amp; Gurau Dapur Emak
+                  </h2>
+                  <p
+                    class="font-body-sm text-body-sm text-on-primary-fixed-variant line-clamp-1 mt-1"
+                  >
+                    Belajar teknik kuah beulangong langsung dari empu resep
+                    gampong.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- Item 4: Ngopi Bareng Pemuda Keude (Span 8, Panoramic 16:9) -->
+            <article
+              class="gallery-item lg:col-span-8 group cursor-pointer bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              data-category="candid"
+              data-index="3"
+            >
+              <div
+                class="relative overflow-hidden aspect-[16/9] bg-surface-container"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  data-alt="Local Acehnese village youth and university students bonding inside a classic rustic Keude Kupi wooden coffee shop at night in Trienggadeng Pidie Jaya. Warm tungsten bare bulb lights hanging overhead, glasses of pulled Sanger coffee and black robusta, engaging conversations, smoke swirls, intimate community brotherhood."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTm9G2mxO9hPBmUkMKkAzJhBUkFlGRwsySqprpXAaAaF6O56foWAc1QnwTjXykal8Az4bdAq4tolKjwYGsg6UCOMw00TxAmR-gYP6Fp-sB_nL6tZsMBuWOQdFlhaqSZqcY1NVhAp4UfFyAESMN3I3dWqNRG8C-xirADIo0nYmaIJpRYffEVJEy3ezDRWC1_SzvlvjTwtkRLZFWPClfNyO0eB3ojZJw45Cs-0FkDIngSNDFnctDKwCq"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div class="absolute top-space-sm left-space-sm">
+                  <span
+                    class="px-space-xs py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-caps text-label-caps uppercase"
+                  >
+                    Candid &amp; Senja
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-space-md left-space-md right-space-md text-on-primary"
+                >
+                  <div
+                    class="flex items-center gap-space-xs text-on-primary-container font-label-caps text-label-caps uppercase text-[10px]"
+                  >
+                    <span>05 September 2026</span>
+                    <span>•</span>
+                    <span>Warung Kopi Keude Trienggadeng</span>
+                  </div>
+                  <h2
+                    class="font-headline-sm text-headline-sm text-on-primary mt-space-2xs"
+                  >
+                    Sanger Panas dan Diskusi Tengah Malam
+                  </h2>
+                  <p
+                    class="font-body-sm text-body-sm text-on-primary-fixed-variant line-clamp-1 mt-1"
+                  >
+                    Menyatukan gagasan bersama pemuda desa dari obrolan cangkir
+                    ke cangkir.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- Item 5: Candid Tertidur Kelelahan di Buku Proker (Span 4, Portrait 3:4) -->
+            <article
+              class="gallery-item lg:col-span-4 group cursor-pointer bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              data-category="candid"
+              data-index="4"
+            >
+              <div
+                class="relative overflow-hidden aspect-[3/4] bg-surface-container"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  data-alt="Heartwarming candid photograph of a tired male college student fast asleep face down over piles of handwritten notebooks and report folders on posko floor mat. Late night quiet study lamp illuminating the messy stationery, handwritten notes, subtle dust motes in light beam, quiet documentary sincerity."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS09f8vPTHb8YaNGOaZ3UQIFY6kVS0H1b3eoQNU1yH8E-s-hG36eRLLFcxHSDE_vjv76Ex5c3PkhqpBwRZLb073cDCR0cEh1h5fjmjIEQ-C_aniOlSnvIBJFg9zIuNz88mENrstS1EIUHeyZOYAreh-hksY4Su3JfcsL9YjOvPcoW3apCsCbWCZd2DXrqtCBEyTcBEOqqm349p8JHOWtdnLQc-6cBr6SuJvIobepO1Twr_L7nvb0D5"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div class="absolute top-space-sm left-space-sm">
+                  <span
+                    class="px-space-xs py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-caps text-label-caps uppercase"
+                  >
+                    Candid &amp; Senja
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-space-md left-space-md right-space-md text-on-primary"
+                >
+                  <div
+                    class="flex items-center gap-space-xs text-on-primary-container font-label-caps text-label-caps uppercase text-[10px]"
+                  >
+                    <span>08 September 2026</span>
+                    <span>•</span>
+                    <span>Ruang Tengah Posko (02.40 WIB)</span>
+                  </div>
+                  <h2
+                    class="font-headline-sm text-headline-sm text-on-primary mt-space-2xs"
+                  >
+                    Rebah di Antara Berkas Laporan
+                  </h2>
+                  <p
+                    class="font-body-sm text-body-sm text-on-primary-fixed-variant line-clamp-1 mt-1"
+                  >
+                    Dedikasi tanpa suara saat batas waktu laporan mingguan kian
+                    dekat.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- Item 6: Kabut Pagi Sawah Pidie Jaya (Span 4, Square 1:1) -->
+            <article
+              class="gallery-item lg:col-span-4 group cursor-pointer bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              data-category="candid"
+              data-index="5"
+            >
+              <div
+                class="relative overflow-hidden aspect-[1/1] bg-surface-container"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  data-alt="Breathtaking dawn landscape of Deah Teumanah village in Pidie Jaya. Layered soft morning mist rolling over vibrant emerald green rice paddies, coconut palm silhouettes, distant rolling blue Aceh mountains in morning pastel haze, serene rural quietness, editorial fine art landscape photography."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd5ygEZ6tVZBX28U_oejENesk0J68F6HkGEK6G6sD6ArhhMyMz-9i-CmRfk8OX09hbbkqwlEX_qJxx4wEAJ51iKiqfcdHIvyLt5zgdmeyEZFIOhBYxxsqZS2zJ9YklB7HN1zRYHISpNRCWOZlKXrtKM--68AK8ioMYHPVK8dvXKvQgYagNIXt26VmBksFPvGCM4iazhFjTYfanxiVkTR-wLJJtBncHO-jRQ9V4FX-bgWLMLWXrCFs8"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div class="absolute top-space-sm left-space-sm">
+                  <span
+                    class="px-space-xs py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-caps text-label-caps uppercase"
+                  >
+                    Candid &amp; Senja
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-space-md left-space-md right-space-md text-on-primary"
+                >
+                  <div
+                    class="flex items-center gap-space-xs text-on-primary-container font-label-caps text-label-caps uppercase text-[10px]"
+                  >
+                    <span>11 September 2026</span>
+                    <span>•</span>
+                    <span>Pematang Sawah Dusun Timur</span>
+                  </div>
+                  <h2
+                    class="font-headline-sm text-headline-sm text-on-primary mt-space-2xs"
+                  >
+                    Embun Subuh di Ujung Pematang
+                  </h2>
+                  <p
+                    class="font-body-sm text-body-sm text-on-primary-fixed-variant line-clamp-1 mt-1"
+                  >
+                    Pagi sunyi sebelum deru traktor petani membangkitkan desa.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- Item 7: Perlombaan Anak Desa Lucu (Span 4, Portrait 3:4) -->
+            <article
+              class="gallery-item lg:col-span-4 group cursor-pointer bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              data-category="proker"
+              data-index="6"
+            >
+              <div
+                class="relative overflow-hidden aspect-[3/4] bg-surface-container"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  data-alt="Hilarious and heartfelt moment of village children participating in sack race and cracker eating competition during KKN village festival in Deah Teumanah. Expressive determined faces covered in flour and laughter, enthusiastic village spectators cheering in background, warm festive rural Aceh atmosphere."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjHggNr-AR9C1LM1o5inEk2qjSjKmwPjbO2Q21G-4IzhAXXM1BPBRwXFMmJhphHvxUOZPYhUHX_8ARGYbEay6009sJQNuhibvmnsxnRWqJNirVmCxEmqF7pL9n8byFFjYy0HPOgJpa4n0HMcjFBVJzVGcBEZMWcbOaO900mk2aEJXImBi_WoqxkDjt0c8I7st4a5MYRKTVWo7Q9LIa1jjHPBVvJmVnKbMDFP6XGEEZqsW-_4YrGwIR"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"
+                ></div>
+                <div class="absolute top-space-sm left-space-sm">
+                  <span
+                    class="px-space-xs py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-caps text-label-caps uppercase"
+                  >
+                    Kegiatan Proker
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-space-md left-space-md right-space-md text-on-primary"
+                >
+                  <div
+                    class="flex items-center gap-space-xs text-on-primary-container font-label-caps text-label-caps uppercase text-[10px]"
+                  >
+                    <span>15 September 2026</span>
+                    <span>•</span>
+                    <span>Lapangan Bola Gampong</span>
+                  </div>
+                  <h2
+                    class="font-headline-sm text-headline-sm text-on-primary mt-space-2xs"
+                  >
+                    Tekad Cilik di Festival Gampong
+                  </h2>
+                  <p
+                    class="font-body-sm text-body-sm text-on-primary-fixed-variant line-clamp-1 mt-1"
+                  >
+                    Sorak sorai membakar semangat dalam lomba balap karung
+                    tradisional.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- Item 8: Penyerahan Cinderamata Pak Keuchik (Span 12, Editorial Banner 21:9) -->
+            <article
+              class="gallery-item lg:col-span-12 group cursor-pointer bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              data-category="proker"
+              data-index="7"
+            >
+              <div
+                class="relative overflow-hidden aspect-[16/7] md:aspect-[21/9] bg-surface-container"
+              >
+                <img
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+                  data-alt="Formal and solemn farewell ceremonial moment inside Balai Desa Deah Teumanah. University KKN coordinator presenting a framed remembrance plaque to Pak Keuchik village head, who is dressed in formal traditional Aceh kupiah meukeutop attire, shaking hands with deep mutual respect, surrounded by village elders and student members."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb4oP5zbxQ2wPtpnpNWD10AmaUEYDiWqyGxDZUd2yg1VbKhzam8oxm49pTvOYQ-lFbzd72kGZBAQgvSmbywEeEFDYPjKvfoikHXvlIenz7ytNrGfvbF1GlcRYmL_IDq7K74i0TF-e6UqGW-bZvHKofbRVMXnvAqVjwvwlNOHD4bDYKoSa9_LAm7CEgktxhCHW9AtkEO4BHVurKjQikIKq56OE_X_uFF7cANK9e6O2nR_wnsOCOfwIE"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/30 to-transparent"
+                ></div>
+                <div class="absolute top-space-sm left-space-sm">
+                  <span
+                    class="px-space-xs py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-caps text-label-caps uppercase"
+                  >
+                    Kegiatan Proker • Penutupan
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-space-lg left-space-lg right-space-lg text-on-primary max-w-[800px]"
+                >
+                  <div
+                    class="flex items-center gap-space-xs text-on-primary-container font-label-caps text-label-caps uppercase text-[10px]"
+                  >
+                    <span>18 September 2026</span>
+                    <span>•</span>
+                    <span>Balai Pertemuan Gampong</span>
+                  </div>
+                  <h2
+                    class="font-headline-lg text-headline-lg text-on-primary mt-space-2xs"
+                  >
+                    Tanda Terimakasih untuk Rumah Kedua Kami
+                  </h2>
+                  <p
+                    class="font-body-default text-body-default text-on-primary-fixed-variant mt-space-xs"
+                  >
+                    Penyerahan plakat dan peta potensi gampong kepada Pak
+                    Keuchik Deah Teumanah. Malam haru pelepasan sebelum
+                    perjalanan kembali ke kampus.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <!-- Editorial Footnote Note -->
+          <div
+            class="mt-space-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md p-space-lg bg-surface-container rounded-xl shadow-sm"
+          >
+            <div class="flex items-center gap-space-md">
+              <span class="material-symbols-outlined text-[32px] text-secondary"
+                >inventory_2</span
+              >
+              <div class="flex flex-col">
+                <span class="font-headline-sm text-headline-sm text-primary"
+                  >Arsip Master Digital Tersedia</span
+                >
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Folder Google Drive resmi Laskar 11 menyimpan 840+ foto RAW
+                  &amp; video kenangan beresolusi tinggi.</span
+                >
+              </div>
+            </div>
+            <a
+              class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded bg-primary text-on-primary font-label-default text-label-default transition-all hover:bg-secondary"
+              href="#"
+            >
+              <span>Buka Arsip Cloud</span>
+              <span class="material-symbols-outlined text-[16px]"
+                >open_in_new</span
+              >
+            </a>
+          </div>
+        </section>
+        <!-- Interactive Lightbox Modal -->
+        <div
+          class="fixed inset-0 z-50 hidden bg-primary-container/90 backdrop-blur-md flex items-center justify-center p-space-sm sm:p-space-lg"
+          id="lightbox-modal"
+        >
+          <div
+            class="relative w-full max-w-[1100px] max-h-[92vh] flex flex-col bg-surface rounded-xl overflow-hidden shadow-2xl"
+          >
+            <!-- Top Action Bar -->
+            <div
+              class="flex items-center justify-between px-space-md py-space-sm bg-surface-container border-b-0"
+            >
+              <div class="flex items-center gap-space-xs">
+                <span
+                  class="w-2 h-2 rounded-full bg-on-tertiary-container"
+                ></span>
+                <span
+                  class="font-label-caps text-label-caps uppercase text-secondary"
+                  id="lb-counter"
+                  >Frame 1 dari 8</span
+                >
+              </div>
+              <div class="flex items-center gap-space-xs">
+                <button
+                  class="p-space-xs text-on-surface-variant hover:text-primary rounded hover:bg-surface-container-high transition-colors"
+                  id="lb-download"
+                  title="Unduh Foto"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >download</span
+                  >
+                </button>
+                <button
+                  class="p-space-xs text-on-surface-variant hover:text-primary rounded hover:bg-surface-container-high transition-colors"
+                  id="lb-share"
+                  title="Bagikan Kenangan"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >share</span
+                  >
+                </button>
+                <div class="w-px h-5 bg-surface-dim mx-1"></div>
+                <button
+                  class="p-space-xs text-on-surface-variant hover:text-primary rounded hover:bg-surface-container-high transition-colors"
+                  id="lb-close"
+                  title="Tutup Modal (Esc)"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-[22px]"
+                    >close</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Main Photo Showcase Area with Prev/Next buttons -->
+            <div
+              class="relative flex-1 bg-primary flex items-center justify-center overflow-hidden min-h-[340px] max-h-[64vh]"
+            >
+              <img
+                class="max-h-[64vh] w-auto max-w-full object-contain select-none"
+                data-alt="Detailed view of selected photo in high resolution"
+                id="lb-img"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL57IGa8m_rPzpAoVfvKSEStKcWykOHOu7gBMuqrgQ-vVa0kNEVbWNQnIhYDqvMuZiO6v0d9b2FvwjQdal_egSyOg7GmB8I-KFMHogd8t0vAU5kUTgbtgveJvVUkyrgprSQO3bCOqZQKw7YFxs1g-iSr0ttqgW0EV91Yh1CFPjlhtCSs1eo_pli0cly17RZCg-E8DfHv4jSnOKlaiPOnevz6-EFwD4kUq8kJ7GiALAIiWaeNrfVpJu"
+              />
+              <!-- Navigation Buttons -->
+              <button
+                aria-label="Sebelumnya"
+                class="absolute left-space-sm top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-surface/80 hover:bg-surface text-primary backdrop-blur-sm flex items-center justify-center shadow-md transition-transform hover:scale-105"
+                id="lb-prev"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-[24px]"
+                  >chevron_left</span
+                >
+              </button>
+              <button
+                aria-label="Berikutnya"
+                class="absolute right-space-sm top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-surface/80 hover:bg-surface text-primary backdrop-blur-sm flex items-center justify-center shadow-md transition-transform hover:scale-105"
+                id="lb-next"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-[24px]"
+                  >chevron_right</span
+                >
+              </button>
+            </div>
+            <!-- Bottom Metadata Drawer -->
+            <div
+              class="p-space-md sm:p-space-lg bg-surface flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md"
+            >
+              <div class="flex flex-col max-w-[700px]">
+                <div
+                  class="flex items-center gap-space-xs text-secondary font-label-caps text-label-caps uppercase"
+                >
+                  <span id="lb-date">Tanggal</span>
+                  <span>•</span>
+                  <span id="lb-location">Lokasi</span>
+                </div>
+                <h3
+                  class="font-headline-sm text-headline-sm text-primary mt-space-2xs"
+                  id="lb-title"
+                >
+                  Judul Dokumentasi
+                </h3>
+                <p
+                  class="font-body-default text-body-default text-on-surface-variant mt-1"
+                  id="lb-desc"
+                >
+                  Keterangan narasi dokumentasi foto.
+                </p>
+              </div>
+              <div
+                class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary text-[20px]"
+                  >person_pin</span
+                >
+                <div class="flex flex-col">
+                  <span
+                    class="font-label-caps text-label-caps text-secondary text-[10px] uppercase"
+                    >Arsiparis / Fotografer</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm font-semibold text-primary"
+                    id="lb-author"
+                    >Nadia Safitri (Laskar 11)</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          // Gallery item data store
+          const galleryData = [
+            {
+              title: "Tawa Lepas Tanpa Syarat di Pelataran Meunasah",
+              date: "24 Agustus 2026",
+              location: "Halaman Meunasah Deah Teumanah, Trienggadeng",
+              desc: "Setiap ashar usai, anak-anak berkumpul sebelum kelas mengaji dimulai. Energi mereka selalu berhasil mencairkan lelah kami setelah seharian mengabdi.",
+              author: "Nadia Safitri (Div. Humas)",
+              category: "warga",
+              prompt:
+                "A group of lively Acehnese village children laughing and running barefoot across the sunny yard of Meunasah Deah Teumanah, Trienggadeng. Warm cinematic natural golden sunlight, candid dynamic movement, lush tropical fronds in background, film grain texture, natural muted tones with olive green and warm amber earth hues.",
+            },
+            {
+              title: "Sebelas Hati di Beranda Senja",
+              date: "29 Agustus 2026",
+              location: "Teras Posko Induk Trienggadeng",
+              desc: "Momen rehat bersama cangkir kopi tubruk setelah survey sanitasi gampong. Membicarakan rumah, rindu, dan harapan yang disemai di tanah Pidie Jaya.",
+              author: "Fahri Al-Mubarak (Ketua Kelompok)",
+              category: "posko",
+              prompt:
+                "Eleven university students of KKN Laskar 11 sitting together on the wooden veranda of their rural village homestay house in Deah Teumanah Pidie Jaya. Rich golden hour dusk sunlight bathing their tired happy faces, holding enamel mugs of hot Aceh coffee, warm familial atmosphere, authentic photobook editorial aesthetic.",
+            },
+            {
+              title: "Aroma Kari & Gurau Dapur Emak",
+              date: "02 September 2026",
+              location: "Dapur Kenduri Jurong Barat",
+              desc: "Belajar teknik kuah beulangong langsung dari empu resep gampong. Kehangatan emak-emak menerima kami selayaknya anak kandung sendiri.",
+              author: "Rizka Aulia (Div. Konsumsi)",
+              category: "warga",
+              prompt:
+                "Acehnese village mothers and university female students joyfully preparing traditional feast together in village communal kitchen. Grating fresh coconut on traditional kukuran bench, massive iron cooking cauldrons, warm morning sunbeam filtering through wooden slat windows, documentary realism, tactile warmth.",
+            },
+            {
+              title: "Sanger Panas dan Diskusi Tengah Malam",
+              date: "05 September 2026",
+              location: "Warung Kopi Keude Trienggadeng",
+              desc: "Menyatukan gagasan bersama pemuda desa dari obrolan cangkir ke cangkir. Menemukan kesepahaman pemuda gampong untuk festival peringatan kemerdekaan.",
+              author: "Teuku Ilham (Div. Pemuda & Olahraga)",
+              category: "candid",
+              prompt:
+                "Local Acehnese village youth and university students bonding inside a classic rustic Keude Kupi wooden coffee shop at night in Trienggadeng Pidie Jaya. Warm tungsten bare bulb lights hanging overhead, glasses of pulled Sanger coffee and black robusta, engaging conversations, smoke swirls, intimate community brotherhood.",
+            },
+            {
+              title: "Rebah di Antara Berkas Laporan",
+              date: "08 September 2026",
+              location: "Ruang Tengah Posko (02.40 WIB)",
+              desc: "Dedikasi tanpa suara saat batas waktu laporan mingguan kian dekat. Momen candid yang merekam betapa kerasnya usaha seluruh tim di balik layar.",
+              author: "Nadia Safitri (Div. Dokumentasi)",
+              category: "candid",
+              prompt:
+                "Heartwarming candid photograph of a tired male college student fast asleep face down over piles of handwritten notebooks and report folders on posko floor mat. Late night quiet study lamp illuminating the messy stationery, handwritten notes, subtle dust motes in light beam, quiet documentary sincerity.",
+            },
+            {
+              title: "Embun Subuh di Ujung Pematang",
+              date: "11 September 2026",
+              location: "Pematang Sawah Dusun Timur",
+              desc: "Pagi sunyi sebelum deru traktor petani membangkitkan desa. Cahaya biru fajar berpadu siluet pohon kelapa khas pesisir Pidie Jaya.",
+              author: "Muhammad Rayhan (Div. Publikasi)",
+              category: "candid",
+              prompt:
+                "Breathtaking dawn landscape of Deah Teumanah village in Pidie Jaya. Layered soft morning mist rolling over vibrant emerald green rice paddies, coconut palm silhouettes, distant rolling blue Aceh mountains in morning pastel haze, serene rural quietness, editorial fine art landscape photography.",
+            },
+            {
+              title: "Tekad Cilik di Festival Gampong",
+              date: "15 September 2026",
+              location: "Lapangan Bola Gampong Deah Teumanah",
+              desc: "Sorak sorai membakar semangat dalam lomba balap karung dan makan kerupuk. Sukacita sederhana yang membuat satu dusun berkumpul meriah.",
+              author: "Siti Rahmah (Koord. Acara)",
+              category: "proker",
+              prompt:
+                "Hilarious and heartfelt moment of village children participating in sack race and cracker eating competition during KKN village festival in Deah Teumanah. Expressive determined faces covered in flour and laughter, enthusiastic village spectators cheering in background, warm festive rural Aceh atmosphere.",
+            },
+            {
+              title: "Tanda Terimakasih untuk Rumah Kedua Kami",
+              date: "18 September 2026",
+              location: "Balai Pertemuan Gampong",
+              desc: "Penyerahan plakat dan peta potensi gampong kepada Pak Keuchik Deah Teumanah. Malam haru pelepasan sebelum perjalanan kembali ke kampus.",
+              author: "Seluruh Anggota Laskar 11",
+              category: "proker",
+              prompt:
+                "Formal and solemn farewell ceremonial moment inside Balai Desa Deah Teumanah. University KKN coordinator presenting a framed remembrance plaque to Pak Keuchik village head, who is dressed in formal traditional Aceh kupiah meukeutop attire, shaking hands with deep mutual respect, surrounded by village elders and student members.",
+            },
+          ];
+
+          let currentIdx = 0;
+
+          // Filter Logic
+          const filterButtons = document.querySelectorAll(".filter-btn");
+          const galleryItems = document.querySelectorAll(".gallery-item");
+
+          filterButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const filter = btn.getAttribute("data-filter");
+
+              // Toggle button styling
+              filterButtons.forEach((b) => {
+                b.classList.remove("bg-primary", "text-on-primary");
+                b.classList.add("bg-surface-container", "text-on-surface");
+              });
+              btn.classList.remove("bg-surface-container", "text-on-surface");
+              btn.classList.add("bg-primary", "text-on-primary");
+
+              // Filter Grid Items
+              galleryItems.forEach((item) => {
+                const itemCat = item.getAttribute("data-category");
+                if (filter === "all" || itemCat === filter) {
+                  item.style.display = "";
+                } else {
+                  item.style.display = "none";
+                }
+              });
+            });
+          });
+
+          // Lightbox Modal Handling
+          const modal = document.getElementById("lightbox-modal");
+          const lbImg = document.getElementById("lb-img");
+          const lbCounter = document.getElementById("lb-counter");
+          const lbDate = document.getElementById("lb-date");
+          const lbLoc = document.getElementById("lb-location");
+          const lbTitle = document.getElementById("lb-title");
+          const lbDesc = document.getElementById("lb-desc");
+          const lbAuthor = document.getElementById("lb-author");
+          const lbClose = document.getElementById("lb-close");
+          const lbPrev = document.getElementById("lb-prev");
+          const lbNext = document.getElementById("lb-next");
+          const lbShare = document.getElementById("lb-share");
+          const lbDownload = document.getElementById("lb-download");
+
+          function updateModalContent(index) {
+            currentIdx = index;
+            const data = galleryData[index];
+            lbImg.src = "placeholder";
+            lbImg.setAttribute("data-alt", data.prompt);
+            lbCounter.textContent = `Frame ${index + 1} dari ${galleryData.length}`;
+            lbDate.textContent = data.date;
+            lbLoc.textContent = data.location;
+            lbTitle.textContent = data.title;
+            lbDesc.textContent = data.desc;
+            lbAuthor.textContent = data.author;
+          }
+
+          function openModal(index) {
+            updateModalContent(index);
+            modal.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+          }
+
+          function closeModal() {
+            modal.classList.add("hidden");
+            document.body.style.overflow = "";
+          }
+
+          galleryItems.forEach((item) => {
+            item.addEventListener("click", () => {
+              const idx = parseInt(item.getAttribute("data-index"), 10);
+              openModal(idx);
+            });
+          });
+
+          lbClose.addEventListener("click", closeModal);
+
+          modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+              closeModal();
+            }
+          });
+
+          lbPrev.addEventListener("click", (e) => {
+            e.stopPropagation();
+            let prevIdx = currentIdx - 1;
+            if (prevIdx < 0) prevIdx = galleryData.length - 1;
+            updateModalContent(prevIdx);
+          });
+
+          lbNext.addEventListener("click", (e) => {
+            e.stopPropagation();
+            let nextIdx = currentIdx + 1;
+            if (nextIdx >= galleryData.length) nextIdx = 0;
+            updateModalContent(nextIdx);
+          });
+
+          // Keyboard navigation
+          window.addEventListener("keydown", (e) => {
+            if (modal.classList.contains("hidden")) return;
+            if (e.key === "Escape") closeModal();
+            if (e.key === "ArrowLeft") lbPrev.click();
+            if (e.key === "ArrowRight") lbNext.click();
+          });
+
+          // Micro interactions: Share & Download toast notifications
+          lbShare.addEventListener("click", () => {
+            const originalText = lbShare.innerHTML;
+            lbShare.innerHTML = `<span class="material-symbols-outlined text-[20px] text-on-tertiary-container">done</span>`;
+            setTimeout(() => {
+              lbShare.innerHTML = originalText;
+            }, 1500);
+          });
+
+          lbDownload.addEventListener("click", () => {
+            const originalText = lbDownload.innerHTML;
+            lbDownload.innerHTML = `<span class="material-symbols-outlined text-[20px] text-on-tertiary-container">cloud_done</span>`;
+            setTimeout(() => {
+              lbDownload.innerHTML = originalText;
+            }, 1500);
+          });
+        })();
+      </script>
+    </main>
+    <div class="fixed bottom-6 right-6 z-40 animate-fade-up">
+      <div
+        class="bg-surface-container-low/95 backdrop-blur-md rounded-xl p-space-xs pr-space-md shadow-[0_2px_12px_rgba(0,0,0,0.06)] flex items-center gap-space-sm border border-outline-variant/30 max-w-xs"
+      >
+        <button
+          aria-label="Putar audio ambient"
+          class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-secondary transition-colors shrink-0"
+          type="button"
+        >
+          <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+        </button>
+        <div class="flex flex-col min-w-0 pr-space-xs">
+          <span
+            class="font-label-caps text-label-caps text-secondary uppercase text-[10px] tracking-wider"
+            >Latar Suara Ambient</span
+          ><span
+            class="font-body-sm text-body-sm text-on-surface truncate font-medium"
+            >Sore di Desa / Suara Pidie Jaya</span
+          >
+        </div>
+        <span
+          class="material-symbols-outlined text-secondary text-[16px] shrink-0"
+          >graphic_eq</span
+        >
+      </div>
+    </div>
+    <footer
+      class="w-full bg-surface-container-low py-space-2xl border-t border-outline-variant/30"
+    >
+      <div
+        class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"
+      >
+        <div class="flex flex-col gap-space-2xs">
+          <span
+            class="font-headline-sm text-headline-sm text-primary tracking-tight"
+            >Laskar 11</span
+          ><span class="font-body-sm text-body-sm text-on-surface-variant"
+            >KKN 2026 Desa Deah Teumanah, Trienggadeng, Pidie Jaya</span
+          >
+          <p
+            class="font-quote-editorial text-quote-editorial text-secondary italic mt-space-2xs"
+          >
+            “Some moments deserve to be remembered.”
+          </p>
+        </div>
+        <div class="flex flex-col items-start md:items-end gap-space-xs">
+          <span
+            class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest"
+            >© 2026 Laskar 11. Seluruh hak cipta dilindungi.</span
+          ><span class="font-body-sm text-body-sm text-secondary"
+            >Dokumentasi Pengabdian • KKN Tematik 2026</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

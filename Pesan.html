@@ -1,0 +1,1681 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      @keyframes fadeInSimple {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-up {
+        animation: fadeInSimple 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#e3e2e0",
+              "on-tertiary-container": "#788876",
+              "primary-fixed": "#e5e2e1",
+              "on-surface": "#221a11",
+              "surface-tint": "#5f5e5e",
+              error: "#ba1a1a",
+              "inverse-surface": "#382f24",
+              "on-error": "#ffffff",
+              "on-secondary-fixed-variant": "#464745",
+              tertiary: "#000000",
+              "secondary-fixed-dim": "#c7c6c4",
+              "on-secondary-container": "#626361",
+              "on-error-container": "#93000a",
+              primary: "#000000",
+              "on-tertiary-fixed": "#111f12",
+              "outline-variant": "#c4c7c7",
+              "on-primary-fixed": "#1c1b1b",
+              "on-background": "#221a11",
+              "surface-dim": "#e7d7c8",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#444748",
+              secondary: "#5e5f5d",
+              "surface-bright": "#fff8f4",
+              "on-tertiary-fixed-variant": "#3c4b3b",
+              "on-primary": "#ffffff",
+              surface: "#fff8f4",
+              "tertiary-container": "#111f12",
+              "surface-container": "#fbebdb",
+              "secondary-container": "#e0e0dd",
+              "primary-fixed-dim": "#c8c6c5",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#858383",
+              "on-secondary-fixed": "#1a1c1a",
+              "tertiary-fixed-dim": "#bacbb7",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#c8c6c5",
+              outline: "#747878",
+              "inverse-on-surface": "#feeede",
+              "surface-container-high": "#f6e6d6",
+              "on-primary-fixed-variant": "#474746",
+              "surface-variant": "#f0e0d0",
+              background: "#fff8f4",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#fff1e5",
+              "primary-container": "#1c1b1b",
+              "tertiary-fixed": "#d6e7d2",
+              "surface-container-highest": "#f0e0d0",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "prose-max-width": "680px",
+              "space-3xl": "6rem",
+              "space-2xs": "0.25rem",
+              "space-2xl": "4rem",
+              "space-xs": "0.5rem",
+              "space-md": "1rem",
+              "space-4xl": "8rem",
+              "space-sm": "0.75rem",
+              "gutter-desktop": "2.5rem",
+              "gutter-mobile": "1.25rem",
+              "space-lg": "1.5rem",
+              "content-max-width": "1280px",
+              "space-xl": "2.5rem",
+            },
+            fontFamily: {
+              "display-hero-mobile": ["Newsreader"],
+              "label-caps": ["Plus Jakarta Sans"],
+              "headline-xl": ["Newsreader"],
+              "headline-xl-mobile": ["Newsreader"],
+              "headline-md": ["Newsreader"],
+              "body-default": ["Plus Jakarta Sans"],
+              "label-default": ["Plus Jakarta Sans"],
+              "body-lead": ["Plus Jakarta Sans"],
+              "display-hero": ["Newsreader"],
+              "headline-lg": ["Newsreader"],
+              "quote-editorial": ["Newsreader"],
+              "body-sm": ["Plus Jakarta Sans"],
+              "headline-sm": ["Newsreader"],
+            },
+            fontSize: {
+              "display-hero-mobile": [
+                "44px",
+                {
+                  lineHeight: "52px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "400",
+                },
+              ],
+              "label-caps": [
+                "11px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.12em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-xl-mobile": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-md": [
+                "26px",
+                {
+                  lineHeight: "34px",
+                  letterSpacing: "-0.005em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-default": [
+                "15px",
+                {
+                  lineHeight: "24px",
+                  fontWeight: "400",
+                },
+              ],
+              "label-default": [
+                "13px",
+                {
+                  lineHeight: "18px",
+                  fontWeight: "500",
+                },
+              ],
+              "body-lead": [
+                "18px",
+                {
+                  lineHeight: "28px",
+                  fontWeight: "400",
+                },
+              ],
+              "display-hero": [
+                "72px",
+                {
+                  lineHeight: "80px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "quote-editorial": [
+                "24px",
+                {
+                  lineHeight: "36px",
+                  letterSpacing: "-0.005em",
+                  fontWeight: "400",
+                },
+              ],
+              "body-sm": [
+                "13px",
+                {
+                  lineHeight: "20px",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-sm": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  fontWeight: "500",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background font-body-default text-on-surface antialiased selection:bg-surface-variant"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div
+        class="h-28 max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col justify-between py-2.5"
+      >
+        <div class="flex items-center justify-between">
+          <span
+            class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant/80 hidden sm:inline-block"
+            >Arsip Komunal • Catatan Perjalanan</span
+          >
+          <div class="flex items-center gap-space-xs mx-auto sm:mx-0">
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"
+            ></span
+            ><span
+              class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant text-center"
+              >KKN Periode 19 Agustus – 19 September 2026 • Desa Deah Teumanah,
+              Kec. Trienggadeng, Kab. Pidie Jaya</span
+            >
+          </div>
+          <div class="hidden sm:flex items-center">
+            <img
+              alt="Profile"
+              class="w-8 h-8 rounded-full object-cover"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1UtFd4pk3fCJH8AmJqH1Fnc_9KiT8LZGWhN1LKw65tUU8XeNlgAmInlavuM-yH1XLeHpK63LF2qGGk90-2usjjdBm3kEm89lgrGN1-skzSacuE7zKmeF8IfL_LdcAIJz8eBMBUoEZHi6ZVTXC283Zmop3_QtgOPoOMrQXU_mxizRSvR7NX3IiS2J73YjQTwRXhhSVloPsqvzkq6u4D3-S49IWl1acgn6miBHjErH7nyftN1M8uTDquhWzHRUUsognh4rYtFbV2N_A"
+            />
+          </div>
+        </div>
+        <div class="flex items-center justify-between gap-space-md">
+          <div class="flex items-center gap-space-sm">
+            <img
+              alt="Laskar 11"
+              class="w-7 h-7 rounded-full object-cover sm:hidden"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1UtFd4pk3fCJH8AmJqH1Fnc_9KiT8LZGWhN1LKw65tUU8XeNlgAmInlavuM-yH1XLeHpK63LF2qGGk90-2usjjdBm3kEm89lgrGN1-skzSacuE7zKmeF8IfL_LdcAIJz8eBMBUoEZHi6ZVTXC283Zmop3_QtgOPoOMrQXU_mxizRSvR7NX3IiS2J73YjQTwRXhhSVloPsqvzkq6u4D3-S49IWl1acgn6miBHjErH7nyftN1M8uTDquhWzHRUUsognh4rYtFbV2N_A"
+            />
+            <div class="flex flex-col">
+              <span
+                class="font-headline-sm text-headline-sm tracking-tight text-primary leading-none"
+                >Laskar 11</span
+              ><span
+                class="font-label-caps text-label-caps text-secondary text-[9px] tracking-widest uppercase"
+                >Deah Teumanah</span
+              >
+            </div>
+          </div>
+          <nav
+            class="flex items-center gap-space-sm sm:gap-space-md overflow-x-auto no-scrollbar py-1"
+            data-active-classes="text-primary font-semibold border-b border-primary"
+          >
+            <a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="home"
+              href="Home.html"
+              >Home</a
+            ><a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="struktur"
+              href="Struktur.html"
+              >Struktur</a
+            ><a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="cerita-kkn"
+              href="Cerita.html"
+              >Cerita KKN</a
+            ><a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="timeline"
+              href="Timeline.html"
+              >Timeline</a
+            ><a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="galeri"
+              href="Galeri.html"
+              >Galeri</a
+            ><a
+              class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+              data-path="pesan-kesan"
+              href="Pesan.html"
+              >Pesan &amp; Kesan</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-28 bg-background min-h-screen">
+      <div class="flex flex-col w-full">
+        <!-- Editorial Archival Masthead -->
+        <section
+          class="relative w-full overflow-hidden bg-surface pt-space-xl pb-space-3xl"
+        >
+          <div
+            class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-surface-container-high/40 blur-3xl pointer-events-none"
+          ></div>
+          <div
+            class="absolute -left-20 top-1/2 w-80 h-80 rounded-full bg-tertiary-fixed/30 blur-3xl pointer-events-none"
+          ></div>
+          <div
+            class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop relative z-10"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end"
+            >
+              <div class="lg:col-span-8 flex flex-col gap-space-sm">
+                <div
+                  class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container w-fit"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-on-tertiary-container"
+                  ></span>
+                  <span
+                    class="font-label-caps text-label-caps uppercase text-secondary"
+                    >Surat Untuk Kita &amp; Deah Teumanah</span
+                  >
+                </div>
+                <h1
+                  class="font-headline-xl text-headline-xl text-primary tracking-tight"
+                >
+                  Pesan, Kesan, &amp; Surat yang Tak Sempat Terucap
+                </h1>
+                <p
+                  class="font-body-lead text-body-lead text-secondary max-w-[680px]"
+                >
+                  Tentang hal-hal yang sering kita sembunyikan di balik tawa
+                  posko, dan doa-doa baik untuk 11 anak manusia yang pernah
+                  serumah selama sebulan.
+                </p>
+              </div>
+              <div
+                class="lg:col-span-4 flex flex-col items-start lg:items-end justify-end gap-space-xs"
+              >
+                <div
+                  class="p-space-sm rounded-lg bg-surface-container-low shadow-sm flex items-center gap-space-sm w-full sm:w-auto"
+                >
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label-caps text-label-caps text-secondary uppercase"
+                      >Lokasi Arsip</span
+                    >
+                    <span class="font-headline-sm text-headline-sm text-primary"
+                      >Trienggadeng, Pidie Jaya</span
+                    >
+                  </div>
+                  <div class="h-8 w-px bg-outline-variant/30 ml-auto"></div>
+                  <div class="flex flex-col text-right">
+                    <span
+                      class="font-label-caps text-label-caps text-secondary uppercase"
+                      >Total Warkat</span
+                    >
+                    <span class="font-headline-sm text-headline-sm text-primary"
+                      >14 Catatan</span
+                    >
+                  </div>
+                </div>
+                <span
+                  class="font-label-caps text-label-caps text-on-surface-variant/70 uppercase"
+                >
+                  19 Agustus – 19 September 2026
+                </span>
+              </div>
+            </div>
+            <!-- Tab Navigation Switcher -->
+            <div
+              class="mt-space-2xl flex flex-wrap items-center gap-space-xs p-space-2xs bg-surface-container rounded-lg w-fit shadow-sm"
+            >
+              <button
+                class="tab-btn px-space-md py-space-xs rounded-lg font-label-default text-label-default bg-primary text-on-primary shadow-sm transition-all duration-200"
+                id="tab-btn-anggota"
+                onclick="switchTab('anggota')"
+              >
+                Pesan Anggota (11 Surat)
+              </button>
+              <button
+                class="tab-btn px-space-md py-space-xs rounded-lg font-label-default text-label-default text-on-surface hover:bg-surface-container-high transition-all duration-200"
+                id="tab-btn-warga"
+                onclick="switchTab('warga')"
+              >
+                Kesan dari Warga Desa
+              </button>
+              <button
+                class="tab-btn px-space-md py-space-xs rounded-lg font-label-default text-label-default text-on-surface hover:bg-surface-container-high transition-all duration-200"
+                id="tab-btn-form"
+                onclick="switchTab('form')"
+              >
+                Tuliskan Pesan Baru
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Main Content Body -->
+        <div
+          class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop w-full pb-space-4xl"
+        >
+          <!-- SECTION 1: Surat Anggota (11 Cards Mosaic) -->
+          <section
+            class="tab-panel transition-opacity duration-300"
+            id="panel-anggota"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-space-xl gap-space-sm"
+            >
+              <div>
+                <span
+                  class="font-label-caps text-label-caps text-secondary uppercase"
+                  >Dokumentasi Intim</span
+                >
+                <h2 class="font-headline-lg text-headline-lg text-primary">
+                  Kotak Surat Posko Laskar 11
+                </h2>
+              </div>
+              <p class="font-body-sm text-body-sm text-secondary max-w-sm">
+                Klik amplop surat untuk menyingkap isi penuh manuskrip yang
+                ditulis di malam perpisahan gampong.
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg"
+            >
+              <!-- Member 01 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Teuku Rahmat',
+                    'Ketua Kelompok',
+                    '19 September 2026',
+                    'Terima kasih sudah mau dipimpin dengan segala kekuranganku. Menjadi ketua untuk 10 kepala dengan latar belakang berbeda bukan hal mudah, tapi kalian membuatnya menjadi kehormatan terbesar dalam masa kuliahku. Jika ada instruksi yang keras dan malam-malam rapat yang melelahkan hingga larut di serambi meunasah, itu semata demi menjaga amanah warga. Sampai jumpa di wisuda dan pelabuhan sukses masing-masing.',
+                    'https://lh3.googleusercontent.com/aida/AEtjO1UtFd4pk3fCJH8AmJqH1Fnc_9KiT8LZGWhN1LKw65tUU8XeNlgAmInlavuM-yH1XLeHpK63LF2qGGk90-2usjjdBm3kEm89lgrGN1-skzSacuE7zKmeF8IfL_LdcAIJz8eBMBUoEZHi6ZVTXC283Zmop3_QtgOPoOMrQXU_mxizRSvR7NX3IiS2J73YjQTwRXhhSVloPsqvzkq6u4D3-S49IWl1acgn6miBHjErH7nyftN1M8uTDquhWzHRUUsognh4rYtFbV2N_A',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Teuku Rahmat"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida/AEtjO1UtFd4pk3fCJH8AmJqH1Fnc_9KiT8LZGWhN1LKw65tUU8XeNlgAmInlavuM-yH1XLeHpK63LF2qGGk90-2usjjdBm3kEm89lgrGN1-skzSacuE7zKmeF8IfL_LdcAIJz8eBMBUoEZHi6ZVTXC283Zmop3_QtgOPoOMrQXU_mxizRSvR7NX3IiS2J73YjQTwRXhhSVloPsqvzkq6u4D3-S49IWl1acgn6miBHjErH7nyftN1M8uTDquhWzHRUUsognh4rYtFbV2N_A"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Teuku Rahmat
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Ketua Kelompok</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 01
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Terima kasih sudah mau dipimpin dengan segala
+                    kekuranganku...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Menjadi ketua untuk 10 kepala dengan latar belakang berbeda
+                    bukan hal mudah, tapi kalian menjadikannya kehormatan
+                    terbesar...
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 19.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+              <!-- Member 02 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Cut Farah',
+                    'Wakil Ketua',
+                    '19 September 2026',
+                    'Kalian adalah 10 orang asing terbaik yang pernah dipertemukan takdir dalam satu atap bambu. Aku ingat hari pertama kita kikuk memilih kasur lipat, dan hari ini kita menangis karena harus mengemasi ransel masing-masing. Terima kasih untuk setiap tegur sapa hangat saat posko sedang kalut.',
+                    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&amp;auto=format&amp;fit=crop&amp;q=80',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Cut Farah"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnvjBlXmTMFkgc_hb1_J9w7N9ZkwqcG-GSvdxomXG9pvp4djuDPB4QLxhSOa76Sv7tEW6pHnYe4Wb7v-_X9ymqY_4k1gtkshFxzhE8vOYXtlCD8XqAMZEFsYRQLvSP5gbVrcpBXIgr1yFbfBDNa17KgTS9rKx2epMH2UL8APZl4FVakZKyJD150DJOX4NZH7tr9xzNUAWW_Jk8THWRWz9NrHCqDU9jMNLQHUFp_k5CtyoDh4_oo5nl"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Cut Farah
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Wakil Ketua</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 02
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Kalian adalah 10 orang asing terbaik yang pernah
+                    dipertemukan takdir...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Aku ingat hari pertama kita canggung berebut colokan
+                    listrik, dan malam ini kita saling terdiam saat mengemas
+                    tas...
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 19.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+              <!-- Member 03 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Muhammad Rifqi',
+                    'Sekretaris',
+                    '18 September 2026',
+                    'Di antara ribuan kata dalam berkas LPJ yang kususun hingga mataku merah, rasa bangga bersaudara dengan kalian takkan pernah muat dalam format laporan formal manapun. Nama kalian bukan sekadar absensi kegiatan, tapi jejak sejarah hidupku di tanah Trienggadeng.',
+                    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&amp;auto=format&amp;fit=crop&amp;q=80',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Muhammad Rifqi"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ2_LQ1Y7p4X9B6hFZyzROLGCKkG-18XT5oitCmWUvDBaBcYhZk2lPmvvxJvr0nJcBP-RjB_BO8693xHlWC4iLkCryK8k6OqzBQ8HK7SK2iIAyNhsbovbDVist0dmzDuc2yADYBrSPklJocCqMAQVv3ACvhKSVs58vsB8LhvNCW0mSIi_6680HCv6gwHbi7Ygsdsxzt3cLwppZIuXxyexRp66UNQiZzvAsH1JzLynrA5iTMZk0vQ79"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Muhammad Rifqi
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Sekretaris</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 03
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Di antara ribuan kata dalam LPJ, rasa bangga bersaudara tak
+                    bisa ditulis...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Format lembar pertanggungjawaban kampus terlalu sempit untuk
+                    merekam tangis dan tawa kita saat merancang program kerja.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 18.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+              <!-- Member 04 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Syarifah Aulia',
+                    'Bendahara',
+                    '18 September 2026',
+                    'Maaf kalau sering rewel soal uang belanja sayur dan nota minyak tanah. Tapi melihat mangkok kalian bersih dan perut kalian kenyang setelah seharian mengajar di gampong adalah kebahagiaan paling tenang untukku. Sampai bertemu lagi di meja makan yang berbeda.',
+                    'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&amp;auto=format&amp;fit=crop&amp;q=80',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Syarifah Aulia"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZAsPcn0Kl1-NqT5Hp5uLQTu-HC5MHdWGPfft3TAB2ioOd1FwnYQLkNHrEedd_PpHA-7zlU22L4FYuly6GAMMw-l73a3LlN5b4yA9Rh6gUj_exbYyA1QMixSOIss4M8ojqjPJbtWwYj8GIQ4xwuRSisOTf5fFfXmvHw37ku--K_xD9FFAmuVUUYmvnak01Rx92r5RwPOB_3HGGairvXtYgZQDdoX87D-IdCEDSFrgpYHDWGdnuS0-r"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Syarifah Aulia
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Bendahara</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 04
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Maaf kalau sering rewel soal uang belanja, tapi perut
+                    kenyang adalah bahagiaku...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Menghitung sisa kas harian untuk beli ikan tongkol segar di
+                    TPI Panteraja adalah memori terlucu seumur hidup.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 18.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+              <!-- Member 05 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Zulfikar Akbar',
+                    'Divisi Keagamaan &amp; Sosial',
+                    '17 September 2026',
+                    'Anak-anak Meunasah mengajarkanku bahwa ikhlas itu tanpa pamrih. Suara mereka mengeja juz amma di bawah pendar lampu neon remang-remang akan terus berdengung di telingaku setiap kali adzan maghrib berkumandang di Banda Aceh nanti.',
+                    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&amp;auto=format&amp;fit=crop&amp;q=80',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Zulfikar Akbar"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCttC3jYiNfBYCtLZ34FNamb2FNVCD34vq81MreHHgH6PckB-ZVXnfnwqrZhz-AmHDgTKMCEuETjcJcqSxyEqzDvkAXH4wO3rP-vgDkzt-VHyrHFJulfYlBU4IyRpXS7oij60_gO-CNTP6IKwi95A62ej9kyzy3F5ozuYrKYOg1jjkITOeiocesK_Ux1NjK-Y2QLVffgB3x28KMpt2K3lFVOY2jpU5AAwcL9s7US9Q4x7EOFEsIa31p"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Zulfikar Akbar
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Divisi Agama</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 05
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Anak-anak Meunasah mengajarkanku bahwa ikhlas itu tanpa
+                    pamrih...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Mata mereka yang bening memandang kita seperti kakak kandung
+                    sendiri. Deah Teumanah menyembuhkan jiwaku.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 17.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+              <!-- Member 06 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Dinda Putri',
+                    'Divisi Pendidikan &amp; Budaya',
+                    '17 September 2026',
+                    'Posko sederhana kita lebih hangat daripada rumah megah manapun di kota. Atap seng yang berdenting saat hujan deras justru menjadi lagu tidur ternyaman kita selama tiga puluh malam.',
+                    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&amp;auto=format&amp;fit=crop&amp;q=80',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Dinda Putri"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBELRjOTsjPoyMahXwZtuAJy9Sm-JkIamusjv30EEVyXBDDfUOqlaDwOkj8KAJWIaymOwpVTMgkEsP_8lRWxuDz0CkL7pmIUUuLcRhVZTe_V5MPK9nze50oEklJPsRdPx6HDpVei7XB6-YA6pZH3-DK1UsBlaVPxk_gI3hor5esWw4Z80tBDTsBIdRGQ2PvMxE-xDv07x5IielUi2NfX5w16umJ0FA9lWz-xVR7wWMoyYanjHVie8cM"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Dinda Putri
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Divisi Pendidikan</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 06
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Posko sederhana kita lebih hangat daripada rumah megah
+                    manapun...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Duduk melingkar berbagi mie instan tengah malam bersama
+                    cerita masa kecil yang belum pernah kuceritakan pada siapa
+                    pun.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 17.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+              <!-- Member 07 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Ilham Maulana',
+                    'Divisi Pemberdayaan Lingkungan',
+                    '16 September 2026',
+                    'Lumpur sawah dan debu Trienggadeng akan selalu kurindukan. Bibit pohon bakau yang kita tanam di pesisir bersama warga semoga tumbuh rindang, menjadi bukti bahwa 11 anak muda pernah menitipkan cinta di tanah ini.',
+                    'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&amp;auto=format&amp;fit=crop&amp;q=80',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Ilham Maulana"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK_MKW0gMioOz0TRvni_g19JkRuO9oyzQHqqqIBBiYfrhcMaoMxm2QMxeX9gjm7MaF9SsW_yMrSEybgqbxNE5mvuSSA3jdDQL9zlDc4TQsF0ENbBzhyJCQshPJY95e_lisFhce2EXXoZr0qEUfirqr6wmWndetUvClabjzCBuzq_23TTttbWtfri4xtGX_yOHa0I2qlDOSxqTQ6OAYEI0ALtMQ704XD7ywWy7WwYxoEIuOZHd83E1R"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Ilham Maulana
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Divisi Lingkungan</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 07
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Lumpur sawah dan debu Trienggadeng akan selalu
+                    kurindukan...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Melihat bapak-bapak tani memanggil kita untuk singgah minum
+                    kopi tubruk di dangau adalah kemewahan tak tertandingi.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 16.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+              <!-- Member 08 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Nadia Safitri',
+                    'Dokumentasi &amp; Publikasi',
+                    '16 September 2026',
+                    'Ribuan jepretan foto dalam kartu memoriku takkan pernah cukup mengabadikan indahnya kebersamaan kita. Lensa kamera tak mampu merekam tulusnya aroma kopi sareung Pak Keuchik atau tatapan haru mak-mak gampong saat pamitan.',
+                    'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&amp;auto=format&amp;fit=crop&amp;q=80',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Nadia Safitri"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHDxDbJA_hryHVlFTSFl8PpR5OnzOyiOO_lJs2FhtpOfHpphreTfdMMDn-YOTbylGx-1ViWarq-kOBhPQkUrRA8Tir8u3KdRjND7OkFPeLyXRX__1DytCDTlzfGctdIP1RsVWQKj6zakZMtr2IS7zVPz6hQl1NslUaUlNmKi5_RaCyCU2yIuF47s9WhVmhl0S_scSsv76LLcm4UChSU_MwxyeYgi5BDyvhxYfpp974jDqzVpnHBbcm"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Nadia Safitri
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Dokumentasi</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 08
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Ribuan jepretan foto takkan pernah cukup mengabadikan
+                    kebersamaan kita...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Kalian selalu protes kalau kuambil foto candid saat tidur
+                    mangap, tapi foto-foto itulah yang kini paling berharga.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 16.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+              <!-- Member 09 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Fajar Ramadhan',
+                    'Logistik &amp; Perlengkapan',
+                    '15 September 2026',
+                    'Jalan becek dan ban bocor tengah malam jadi saksi betapa solidnya kita. Tak ada yang saling menyalahkan saat motor mogok di tengah kebun sawit. Kita justru tertawa sambil mendorongnya bersama sampai ke bengkel terdekat.',
+                    'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&amp;auto=format&amp;fit=crop&amp;q=80',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Fajar Ramadhan"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv_e_Jzwh5PXvljtyUEkgF0xlzlgBfJGi7pw6MnCnPqgGCDEqHKf09p4CC7BIMQzr58iSwfB71gUZ2fFq4b0LimeehQ_Ndq0hqIPN1Abp_W7D9Nm--WbXUDDjCUYPiAiiySX8-G7r3xRkSiDy0RIBY8nJQlEaXnVo_3ZGmc1tyOEwqt0p0JgQeDRFc0w3XY6soXBES83mbhfRYYFfWk56iF_sHEe-LrDrvBZ4mjhH5ow6NRBAAF3Gh"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Fajar Ramadhan
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Logistik</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 09
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Jalan becek dan ban bocor tengah malam jadi saksi betapa
+                    solidnya kita...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Membawa tenda pinjaman, mengangkat genset ke balai dusun,
+                    semua beban itu jadi ringan karena ada pundak kalian.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 15.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+              <!-- Member 10 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Siti Rahmah',
+                    'Kesehatan &amp; Konsumsi',
+                    '15 September 2026',
+                    'Dapur posko yang berasap setiap subuh adalah saksi tawa dan keluh kesah kita. Suara spatula beradu dengan wajan dan aroma tumis kangkung selalu berhasil membangunkan anak-anak pemalas. Jangan lupa jaga kesehatan saat kembali ke kos masing-masing.',
+                    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&amp;auto=format&amp;fit=crop&amp;q=80',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Siti Rahmah"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDATFtzs0bWbs6EoGHDGuiUJ3DxeQhg8l0xuMlnBqNPn6KbbX2Wpk1W_mdtGLatFh-nwP1lSmz8mddtEAarmJSC97x_Og1oThDsShNvslRfgLalF8Gi9BlEoB-S47Vo3Bn5F9E2gujNYXH4Trm4BvYZZBYwFJzWBEm7bgyufeh3LFckFKLlhT7SgabvLDy4zuxQ-RmuvDYkqIoIWCi0SeX-0GKhMN6uvpF3nwDxDP7hx0tPV6NNjItJ"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Siti Rahmah
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Konsumsi</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 10
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Dapur posko berasap subuh adalah saksi tawa dan keluh kesah
+                    kita...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Obat masuk angin, koyo cabe, dan racikan teh jahe
+                    hangat—semoga ingatan akan kepedulian ini tak lekas pudar.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 15.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+              <!-- Member 11 -->
+              <article
+                class="letter-card group rounded-xl p-space-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                onclick="
+                  openLetterModal(
+                    'Wahyu Pratama',
+                    'Humas &amp; Kemitraan',
+                    '14 September 2026',
+                    'Warga Deah Teumanah mengajarkanku arti menyambut tamu seperti keluarga kandung. Kita datang membawa setitik ilmu, namun pulang membawa segunung kearifan tentang bagaimana mencintai tanah kelahiran dengan tulus.',
+                    'https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&amp;auto=format&amp;fit=crop&amp;q=80',
+                  )
+                "
+              >
+                <div class="flex items-start justify-between mb-space-md">
+                  <div class="flex items-center gap-space-sm">
+                    <img
+                      alt="Wahyu Pratama"
+                      class="w-12 h-12 rounded-full object-cover shadow-sm"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE24sTpaV4f038KwoerAO-tUA9vdSKZoniA8aOgUPG1p5ywLq5CgIZhcwzIKyUBw6xxBcQnogLxDExgkiKXZqWl3F6PlkqVSXuzss8d9-xp67fgdHst7Z746PRKDw5xofio5TCgssa58_GAwgwPrLMwNnX9mAELHfb9A3YCS04hnMtP6ukEj5ruJNAolQd4AVOSc_cz5ISWfrPtXL4aUGMF2Afoa5l6QJr6vBbXojvANNlN3bZg6QE"
+                    />
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm text-primary"
+                      >
+                        Wahyu Pratama
+                      </h3>
+                      <span
+                        class="font-label-caps text-label-caps text-secondary uppercase"
+                        >Humas</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="px-space-xs py-space-2xs rounded bg-surface-container text-secondary font-label-caps text-label-caps"
+                  >
+                    NO. 11
+                  </div>
+                </div>
+                <div class="my-space-sm">
+                  <p
+                    class="font-quote-editorial text-quote-editorial text-on-surface line-clamp-3 italic"
+                  >
+                    “Warga Deah Teumanah menyambut kita seperti keluarga
+                    kandung...”
+                  </p>
+                  <p
+                    class="font-body-default text-body-default text-on-surface-variant line-clamp-2 mt-space-xs"
+                  >
+                    Pintu rumah mereka selalu terbuka lebar tanpa kunci,
+                    secangkir kopi panas selalu disodorkan tanpa diminta.
+                  </p>
+                </div>
+                <div
+                  class="pt-space-md flex items-center justify-between mt-auto"
+                >
+                  <span class="font-label-caps text-label-caps text-secondary"
+                    >POSTMARK: 14.09.2026</span
+                  >
+                  <span
+                    class="font-label-default text-label-default text-primary font-medium group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                  >
+                    Buka Surat
+                    <span class="material-symbols-outlined text-[16px]"
+                      >arrow_forward</span
+                    >
+                  </span>
+                </div>
+              </article>
+            </div>
+          </section>
+          <!-- SECTION 2: Pesan Dari Tokoh Gampong -->
+          <section
+            class="tab-panel hidden transition-opacity duration-300"
+            id="panel-warga"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-space-xl gap-space-sm"
+            >
+              <div>
+                <span
+                  class="font-label-caps text-label-caps text-secondary uppercase"
+                  >Kearifan Tanah Rencong</span
+                >
+                <h2 class="font-headline-lg text-headline-lg text-primary">
+                  Kesan Para Tetua &amp; Pemuda Gampong
+                </h2>
+              </div>
+              <p class="font-body-sm text-body-sm text-secondary max-w-sm">
+                Ungkapan tulus dari mereka yang menyambut dan menjaga kita
+                dengan tangan terbuka selama 30 hari penuh berkah.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+              <!-- Keuchik -->
+              <div
+                class="p-space-xl rounded-xl bg-surface-container shadow-sm flex flex-col justify-between"
+              >
+                <div class="flex items-center gap-space-sm mb-space-md">
+                  <div
+                    class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm"
+                  >
+                    T
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-headline-sm text-primary">
+                      Teuku Mukhlis
+                    </h3>
+                    <span
+                      class="font-label-caps text-label-caps text-secondary uppercase"
+                      >Keuchik Gampong Deah Teumanah</span
+                    >
+                  </div>
+                </div>
+                <blockquote
+                  class="font-quote-editorial text-quote-editorial text-on-surface my-space-sm"
+                >
+                  “Anak-anak kami dari Laskar 11 tidak hanya menaruh program
+                  kerja, tapi menaruh hati di desa kami. Meunasah selalu ramai,
+                  anak-anak kecil bersemangat belajar. Jangan lupa jalan pulang
+                  kemari.”
+                </blockquote>
+                <div
+                  class="mt-space-md pt-space-xs flex items-center justify-between text-secondary"
+                >
+                  <span class="font-label-caps text-label-caps"
+                    >Tercatat: 19 September 2026</span
+                  >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >verified</span
+                  >
+                </div>
+              </div>
+              <!-- Teungku Meunasah -->
+              <div
+                class="p-space-xl rounded-xl bg-surface-container shadow-sm flex flex-col justify-between"
+              >
+                <div class="flex items-center gap-space-sm mb-space-md">
+                  <div
+                    class="w-14 h-14 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm"
+                  >
+                    Tgk
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-headline-sm text-primary">
+                      Tgk. Abdullah Umar
+                    </h3>
+                    <span
+                      class="font-label-caps text-label-caps text-secondary uppercase"
+                      >Imum Meunasah Gampong</span
+                    >
+                  </div>
+                </div>
+                <blockquote
+                  class="font-quote-editorial text-quote-editorial text-on-surface my-space-sm"
+                >
+                  “Alhamdulillah, adinda mahasiswa sangat santun. Pengajian
+                  maghrib anak-anak jadi lebih semarak. Semoga ilmu yang kalian
+                  tularkan menjadi amal jariyah yang mengalir selamanya.”
+                </blockquote>
+                <div
+                  class="mt-space-md pt-space-xs flex items-center justify-between text-secondary"
+                >
+                  <span class="font-label-caps text-label-caps"
+                    >Tercatat: 18 September 2026</span
+                  >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >verified</span
+                  >
+                </div>
+              </div>
+              <!-- Ketua Pemuda -->
+              <div
+                class="p-space-xl rounded-xl bg-surface-container shadow-sm flex flex-col justify-between"
+              >
+                <div class="flex items-center gap-space-sm mb-space-md">
+                  <div
+                    class="w-14 h-14 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-headline-sm"
+                  >
+                    M
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-headline-sm text-primary">
+                      Munawir Syah
+                    </h3>
+                    <span
+                      class="font-label-caps text-label-caps text-secondary uppercase"
+                      >Ketua Pemuda Gampong</span
+                    >
+                  </div>
+                </div>
+                <blockquote
+                  class="font-quote-editorial text-quote-editorial text-on-surface my-space-sm"
+                >
+                  “Malam pertandingan voli persahabatan dan ngopi bareng di
+                  warung simpang tiga adalah momen yang bikin kangen. Kalian
+                  kawan seperjuangan kami, bukan cuma tamu sesaat.”
+                </blockquote>
+                <div
+                  class="mt-space-md pt-space-xs flex items-center justify-between text-secondary"
+                >
+                  <span class="font-label-caps text-label-caps"
+                    >Tercatat: 17 September 2026</span
+                  >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >verified</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- SECTION 3: Guestbook & Bottle Memory Form -->
+          <section
+            class="tab-panel hidden transition-opacity duration-300"
+            id="panel-form"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start"
+            >
+              <div class="lg:col-span-5 flex flex-col gap-space-md">
+                <span
+                  class="font-label-caps text-label-caps text-secondary uppercase"
+                  >Interaksi Komunal</span
+                >
+                <h2 class="font-headline-lg text-headline-lg text-primary">
+                  Tinggalkan Jejak Kenangan
+                </h2>
+                <p class="font-body-default text-body-default text-secondary">
+                  Setiap tulisan di sini akan tersimpan abadi di "Botol Kenangan
+                  Laskar 11". Baik kamu warga Deah Teumanah, sesama pejuang KKN,
+                  ataupun kawan yang singgah ke laman ini, torehkan kalimat
+                  manismu.
+                </p>
+                <div
+                  class="p-space-lg rounded-xl bg-surface-container flex flex-col gap-space-sm shadow-sm mt-space-sm"
+                >
+                  <div
+                    class="flex items-center gap-space-xs text-on-tertiary-container"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >lock</span
+                    >
+                    <span
+                      class="font-label-caps text-label-caps uppercase font-semibold"
+                      >Arsip Dilindungi</span
+                    >
+                  </div>
+                  <p class="font-body-sm text-body-sm text-secondary">
+                    Pesan yang masuk akan dikurasi dan disematkan langsung ke
+                    lembaran arsip digital gampong agar generasi mahasiswa
+                    berikutnya tahu bahwa kita pernah mengukir cerita di sini.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="lg:col-span-7 bg-surface-container-lowest p-space-xl rounded-xl shadow-md flex flex-col"
+              >
+                <form
+                  class="flex flex-col gap-space-md"
+                  id="memory-form"
+                  onsubmit="handleFormSubmit(event)"
+                >
+                  <div>
+                    <label
+                      class="block font-label-caps text-label-caps uppercase text-secondary mb-space-2xs"
+                      for="penulis-nama"
+                      >Nama Anda / Panggilan</label
+                    >
+                    <input
+                      class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-default focus:outline-none focus:ring-1 focus:ring-primary"
+                      id="penulis-nama"
+                      placeholder="Contoh: Cut Mawar / Alumni 2026"
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      class="block font-label-caps text-label-caps uppercase text-secondary mb-space-2xs"
+                      for="penulis-peran"
+                      >Identitas / Hubungan</label
+                    >
+                    <select
+                      class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-default focus:outline-none focus:ring-1 focus:ring-primary"
+                      id="penulis-peran"
+                    >
+                      <option value="Warga Gampong">
+                        Warga Gampong Deah Teumanah
+                      </option>
+                      <option value="Anggota Laskar 11">
+                        Anggota Laskar 11
+                      </option>
+                      <option value="Dosen Pembimbing">
+                        Dosen Pembimbing Lapangan (DPL)
+                      </option>
+                      <option value="Keluarga / Kerabat">
+                        Keluarga / Kerabat Mahasiswa
+                      </option>
+                      <option value="Penikmat Arsip">Pengunjung Arsip</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      class="block font-label-caps text-label-caps uppercase text-secondary mb-space-2xs"
+                      for="penulis-pesan"
+                      >Isi Surat / Pesan Kenangan</label
+                    >
+                    <textarea
+                      class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-default focus:outline-none focus:ring-1 focus:ring-primary resize-none"
+                      id="penulis-pesan"
+                      placeholder="Tuliskan ungkapan hatimu di sini..."
+                      required=""
+                      rows="5"
+                    ></textarea>
+                  </div>
+                  <button
+                    class="w-full py-space-sm px-space-lg rounded-lg bg-primary text-on-primary font-label-default text-label-default font-semibold hover:bg-secondary transition-colors flex items-center justify-center gap-space-xs shadow-sm mt-space-xs"
+                    type="submit"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >send</span
+                    >
+                    Kirim Surat ke Botol Kenangan
+                  </button>
+                </form>
+                <div
+                  class="hidden mt-space-md p-space-md rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center gap-space-sm"
+                  id="form-success-alert"
+                >
+                  <span class="material-symbols-outlined">check_circle</span>
+                  <span class="font-body-sm text-body-sm font-medium"
+                    >Surat berhasil tersimpan dalam botol kenangan digital.
+                    Terima kasih atas jejak kasihmu!</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- Editorial Modal for Full Letter View -->
+        <div
+          class="fixed inset-0 z-50 bg-primary/80 backdrop-blur-md hidden flex items-center justify-center p-gutter-mobile opacity-0 transition-opacity duration-300"
+          id="letter-modal"
+        >
+          <div
+            class="bg-surface-container-lowest max-w-[680px] w-full rounded-xl p-space-xl shadow-2xl relative flex flex-col max-h-[921px] overflow-y-auto"
+          >
+            <button
+              class="absolute top-4 right-4 text-secondary hover:text-primary transition-colors"
+              onclick="closeLetterModal()"
+            >
+              <span class="material-symbols-outlined text-[24px]">close</span>
+            </button>
+            <div class="flex items-center gap-space-md pb-space-md mb-space-md">
+              <img
+                alt="Foto Anggota"
+                class="w-16 h-16 rounded-full object-cover shadow-sm"
+                id="modal-avatar"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD5VOybnfG3rZXfULOkKrb3Lp4iceyq3Z9V5vPdaDLYEPU2BYDOD5b_I47Zxz5w_7UY1q4G9D8wK2KdMAxiqkJrGCNQBQCYF53QD0_2CMASaf9V1ziuS3K0m_3HdDKPA4a8Qy9IaVMobOra6KAMbEj9asCU256vqSt-g3QYPY36iYlg6sfmUJXsNCUDNBAwqZ98c_zzd4qAJYNEJ5HfeQk8VAvDi13E3Vpi3QQ0j5CnKXwDdwZced3"
+              />
+              <div class="flex flex-col">
+                <span
+                  class="font-label-caps text-label-caps text-secondary uppercase"
+                  id="modal-role"
+                  >Peran Anggota</span
+                >
+                <h3
+                  class="font-headline-md text-headline-md text-primary"
+                  id="modal-name"
+                >
+                  Nama Anggota
+                </h3>
+                <span
+                  class="font-body-sm text-body-sm text-on-surface-variant"
+                  id="modal-date"
+                  >Tanggal Surat</span
+                >
+              </div>
+            </div>
+            <div class="flex flex-col gap-space-sm py-space-sm">
+              <span class="material-symbols-outlined text-secondary text-[32px]"
+                >format_quote</span
+              >
+              <p
+                class="font-quote-editorial text-quote-editorial text-on-surface leading-relaxed italic"
+                id="modal-content"
+              >
+                Isi surat lengkap...
+              </p>
+            </div>
+            <div
+              class="pt-space-lg flex justify-between items-center mt-space-md"
+            >
+              <span
+                class="font-label-caps text-label-caps text-secondary uppercase tracking-widest"
+                >Arsip Eksklusif KKN 2026</span
+              >
+              <button
+                class="px-space-md py-space-2xs rounded-lg bg-surface-container hover:bg-surface-container-high font-label-default text-label-default text-primary transition-colors"
+                onclick="closeLetterModal()"
+              >
+                Tutup Surat
+              </button>
+            </div>
+          </div>
+        </div>
+        <script>
+          function switchTab(tabId) {
+            const panels = ["anggota", "warga", "form"];
+            panels.forEach((id) => {
+              const panel = document.getElementById("panel-" + id);
+              const btn = document.getElementById("tab-btn-" + id);
+              if (id === tabId) {
+                panel.classList.remove("hidden");
+                btn.classList.remove(
+                  "text-on-surface",
+                  "hover:bg-surface-container-high",
+                );
+                btn.classList.add("bg-primary", "text-on-primary", "shadow-sm");
+              } else {
+                panel.classList.add("hidden");
+                btn.classList.remove(
+                  "bg-primary",
+                  "text-on-primary",
+                  "shadow-sm",
+                );
+                btn.classList.add(
+                  "text-on-surface",
+                  "hover:bg-surface-container-high",
+                );
+              }
+            });
+          }
+
+          function openLetterModal(name, role, date, content, avatar) {
+            const modal = document.getElementById("letter-modal");
+            document.getElementById("modal-name").textContent = name;
+            document.getElementById("modal-role").textContent = role;
+            document.getElementById("modal-date").textContent =
+              "Trienggadeng, " + date;
+            document.getElementById("modal-content").textContent =
+              '"' + content + '"';
+            document.getElementById("modal-avatar").src = avatar;
+
+            modal.classList.remove("hidden");
+            setTimeout(() => {
+              modal.classList.remove("opacity-0");
+            }, 10);
+          }
+
+          function closeLetterModal() {
+            const modal = document.getElementById("letter-modal");
+            modal.classList.add("opacity-0");
+            setTimeout(() => {
+              modal.classList.add("hidden");
+            }, 300);
+          }
+
+          function handleFormSubmit(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById("form-success-alert");
+            alertBox.classList.remove("hidden");
+            document.getElementById("memory-form").reset();
+            setTimeout(() => {
+              alertBox.classList.add("hidden");
+            }, 6000);
+          }
+        </script>
+      </div>
+    </main>
+    <div class="fixed bottom-6 right-6 z-40 animate-fade-up">
+      <div
+        class="bg-surface-container-low/95 backdrop-blur-md rounded-xl p-space-xs pr-space-md shadow-[0_2px_12px_rgba(0,0,0,0.06)] flex items-center gap-space-sm border border-outline-variant/30 max-w-xs"
+      >
+        <button
+          aria-label="Putar audio ambient"
+          class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-secondary transition-colors shrink-0"
+          type="button"
+        >
+          <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+        </button>
+        <div class="flex flex-col min-w-0 pr-space-xs">
+          <span
+            class="font-label-caps text-label-caps text-secondary uppercase text-[10px] tracking-wider"
+            >Latar Suara Ambient</span
+          ><span
+            class="font-body-sm text-body-sm text-on-surface truncate font-medium"
+            >Sore di Desa / Suara Pidie Jaya</span
+          >
+        </div>
+        <span
+          class="material-symbols-outlined text-secondary text-[16px] shrink-0"
+          >graphic_eq</span
+        >
+      </div>
+    </div>
+    <footer
+      class="w-full bg-surface-container-low py-space-2xl border-t border-outline-variant/30"
+    >
+      <div
+        class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"
+      >
+        <div class="flex flex-col gap-space-2xs">
+          <span
+            class="font-headline-sm text-headline-sm text-primary tracking-tight"
+            >Laskar 11</span
+          ><span class="font-body-sm text-body-sm text-on-surface-variant"
+            >KKN 2026 Desa Deah Teumanah, Trienggadeng, Pidie Jaya</span
+          >
+          <p
+            class="font-quote-editorial text-quote-editorial text-secondary italic mt-space-2xs"
+          >
+            “Some moments deserve to be remembered.”
+          </p>
+        </div>
+        <div class="flex flex-col items-start md:items-end gap-space-xs">
+          <span
+            class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest"
+            >© 2026 Laskar 11. Seluruh hak cipta dilindungi.</span
+          ><span class="font-body-sm text-body-sm text-secondary"
+            >Dokumentasi Pengabdian • KKN Tematik 2026</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
